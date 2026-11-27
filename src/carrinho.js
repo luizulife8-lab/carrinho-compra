@@ -14,7 +14,7 @@ function calcularSubtotal (itens) {
 
     return total;
 }
-
+/*
 var minhasCompras = [
     {
         nome: "Caneta",
@@ -27,6 +27,11 @@ var minhasCompras = [
         quantidade: 2
     }
 ]
-
 var total = calcularSubtotal(minhasCompras)
 console.log(total)
+
+*/
+
+module.exports = {
+    calcularSubtotal
+}
