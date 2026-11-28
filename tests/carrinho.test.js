@@ -1,7 +1,9 @@
 const test = require('node:test')
 const assert = require('node:assert')
 
-const {calcularSubtotal } = require('../src/carrinho')
+const {aplicarDesconto} = require('../src/carrinho')
+
+const {calcularSubtotal} = require('../src/carrinho')
 
 test('should sum the amount of itens', () => {
 var minhasCompras = [
@@ -80,4 +82,20 @@ test("Item Iválido Quantidade Negativa", () => {
         }
     )
 
+})
+
+//Cupons Legais
+test("Aplicar desconto de 10%", () => {
+    let result = aplicarDesconto(100, "DESC10");
+    assert.strictEqual(result, 90);
+})
+
+test("Aplicar desconto de 20%", () => {
+    let result = aplicarDesconto(200, "DESC20");
+    assert.strictEqual(result, 160);
+})
+
+test("Não aplicar DESC20 abaixo de 100", () => {
+    let result = aplicarDesconto(80, "DESC20");
+    assert.strictEqual(result, 80);
 })

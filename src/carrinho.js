@@ -32,6 +32,22 @@ console.log(total)
 
 */
 
+
+//Aplicar Cupom
+    function aplicarDesconto(valor, cupom) {
+
+    if (cupom === "DESC10") {
+        return valor - (valor * 0.10);
+
+    } else if (cupom === "DESC20" && valor >= 100) {
+        return valor - (valor * 0.20);
+
+    } else {
+        return valor;
+    }
+}
+   
 module.exports = {
+    aplicarDesconto,
     calcularSubtotal
 }
